@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MombabyPod</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_bar">我的頻道</string>
+    <string name="content_title">剖析孕婦20大禁忌</string>
+    <string name="content_title2">意外流產的發生無法預防，來了又</string>
+    <string name="no_app_to_share">沒有app可分享!</string>
+    <string name="no_share_type">沒有可以支援的app可分享!</string>
+    <string name="error_occurred">抱歉，有錯誤</string>
+    <string name="asynctask">請稍後</string>
+    <string name="context_title">內容標題</string>
+    <string name="context_content">內容</string>
+    <string name="test">只是測試</string>
+    <string name="descr_image">Image</string>
+    <string name="menu_item_clear_memory_cache">Clear memory cache</string>
+    <string name="menu_item_clear_disc_cache">Clear disc cache</string>
+    <string name="menu_item_pause_on_scroll">Pause on scroll</string>
+    <string name="menu_item_pause_on_fling">Pause on fling</string>
+
+</resources>
