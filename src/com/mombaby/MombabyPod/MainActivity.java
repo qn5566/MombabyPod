@@ -28,9 +28,6 @@ import com.mombaby.data.DataBase_TitleList;
 import com.mombaby.data.DataBase_ArticleList;
 import com.mombaby.data.DataBase_ContentList;
 import com.mombaby.system.SystemApplication;
-import com.mombaby.menu.StyleA;
-import com.mombaby.menu.StyleB;
-import com.mombaby.menu.StyleC;
 
 public class MainActivity extends ActionBarActivity implements OnClickListener {
 
@@ -45,31 +42,35 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	StyleBB styleb;
 	StyleCC stylec;
 
+	public MainActivity() {
+
+	}
+
 	public static ArrayList<String> TitleList = new ArrayList<String>();
 	public static ArrayList<String> Title_id = new ArrayList<String>();
 
 	String TAG = "MainActivity";
 	ArrayAdapter<String> arrAdapSpnRegion2;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
 		initMeun();
-		
+
 		DataTitle();
 		// TopTitle();
 		StyleSetting();
 	}
-	
-	//初始化Menu選單
-	public void initMeun(){
+
+	// 初始化Menu選單
+	public void initMeun() {
 		stylea = new StyleAA(this);
 		styleb = new StyleBB(this);
 		stylec = new StyleCC(this);
 	}
-	
+
 	// 資料抓取Title
 	public void DataTitle() {
 		TitleData = new DataBase_TitleList(this, TitleList, Title_id);
@@ -83,53 +84,60 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 				SystemApplication.ArticleList_title,
 				SystemApplication.ArticleList_rkey,
 				SystemApplication.ArticleList_brief,
-				SystemApplication.ArticleList_pic,
-				stylea, styleb, stylec);
+				SystemApplication.ArticleList_pic, stylea, styleb, stylec);
 		Log.v(TAG, "joey SystemApplication.Title_id.get(pos) : "
 				+ SystemApplication.Title_id.get(pos));
 		ArticleData.execute(SystemApplication.Title_id.get(pos));
 
 	}
 
-	
-	
+	// 抓取內文資料
+	public void DataBase_ContentList(int pos) {
+		ContentData = new DataBase_ContentList(this);
+		ContentData.execute(SystemApplication.ArticleList_rkey.get(pos));
+	}
+
 	// 客製化的TitleBar
 	public void TopTitle() {
-		ActionBar mActionBar = getSupportActionBar();
-		mActionBar.setDisplayShowHomeEnabled(false);
-		mActionBar.setDisplayShowTitleEnabled(false);
-		mActionBar.setDisplayShowCustomEnabled(true);
-		LayoutInflater mInflater = LayoutInflater.from(this);
-		// 客製化的View帶入
-		View mCustomView = mInflater.inflate(R.layout.title_bar, null);
-		ImageView imageviewbtn = null;
-		// 設定事件
-		int titleOnClick[] = { R.id.style_btn, R.id.search_btn };
-		for (int i = 0; i < titleOnClick.length; i++) {
-			if ((imageviewbtn = (ImageView) mCustomView
-					.findViewById(titleOnClick[i])) != null)
-				imageviewbtn.setOnClickListener(this);
-		}
-		// 頻道設定
-		Spinner mTitleTextView = (Spinner) mCustomView
-				.findViewById(R.id.title_text);
-		Log.v(TAG, "joey TitleData.activityList :"
-				+ SystemApplication.TitleList);
-		ArrayAdapter<String> arrAdapSpnRegion2 = new ArrayAdapter<String>(this,
-				R.layout.spinner_item, SystemApplication.TitleList);
-		// ArrayAdapterForSpinnerRegion arrAdapSpnRegion2 = new
-		// ArrayAdapterForSpinnerRegion(
-		// this, R.layout.spinner_item, TitleData.activityList
-		// , mTitleTextView);
-		// Title設定
-		arrAdapSpnRegion2
-				.setDropDownViewResource(R.layout.spinner_dropdown_item);
+		runOnUiThread(new Runnable() {
 
-		mTitleTextView.setAdapter(arrAdapSpnRegion2);
-		mTitleTextView.setOnItemSelectedListener(spnRegionOnItemSelected);
+			@Override
+			public void run() {
+				ActionBar mActionBar = getSupportActionBar();
+				mActionBar.setDisplayShowHomeEnabled(false);
+				mActionBar.setDisplayShowTitleEnabled(false);
+				mActionBar.setDisplayShowCustomEnabled(true);
+				LayoutInflater mInflater = LayoutInflater
+						.from(MainActivity.this);
+				// 客製化的View帶入
+				View mCustomView = mInflater.inflate(R.layout.title_bar, null);
+				ImageView imageviewbtn = null;
+				// 設定事件
+				int titleOnClick[] = { R.id.style_btn, R.id.search_btn };
+				for (int i = 0; i < titleOnClick.length; i++) {
+					if ((imageviewbtn = (ImageView) mCustomView
+							.findViewById(titleOnClick[i])) != null)
+						imageviewbtn.setOnClickListener(MainActivity.this);
+				}
+				// 頻道設定
+				Spinner mTitleTextView = (Spinner) mCustomView
+						.findViewById(R.id.title_text);
+				Log.v(TAG, "joey TitleData.activityList :"
+						+ SystemApplication.TitleList);
+				ArrayAdapter<String> arrAdapSpnRegion2 = new ArrayAdapter<String>(
+						MainActivity.this, R.layout.spinner_item,
+						SystemApplication.TitleList);
+				// Title設定
+				arrAdapSpnRegion2
+						.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
-		// mTitleTextView.setOnClickListener(this);
-		mActionBar.setCustomView(mCustomView);
+				mTitleTextView.setAdapter(arrAdapSpnRegion2);
+				mTitleTextView
+						.setOnItemSelectedListener(spnRegionOnItemSelected);
+				mActionBar.setCustomView(mCustomView);
+
+			}
+		});
 
 	}
 
@@ -168,9 +176,10 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 			fragment = new StyleCC();
 			break;
 		}
-
+		
 		FragmentTransaction tran = getFragmentManager().beginTransaction();
 		tran.replace(R.id.home_layout, fragment).commit();
+		vSlideHolder.toggleLeftDrawer();
 	}
 
 	@Override
@@ -194,7 +203,6 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 
 	}
 
-	
 	// 標題選單
 	private Spinner.OnItemSelectedListener spnRegionOnItemSelected = new Spinner.OnItemSelectedListener() {
 
@@ -202,8 +210,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 		public void onItemSelected(AdapterView<?> parent, View v, int position,
 				long id) {
 			DataTitle_con(position);
-			
-			
+
 			Toast.makeText(getApplicationContext(), "你選擇了" + position,
 					Toast.LENGTH_SHORT).show();
 

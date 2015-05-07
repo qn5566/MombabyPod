@@ -7,6 +7,7 @@ import android.widget.AbsListView;
 import com.mombaby.MombabyPod.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
+import com.mombaby.MombabyPod.MainActivity;
 import com.mombaby.context.ContextA;
 
 public class AbsListViewBaseFragment extends BaseFragment {
@@ -18,7 +19,8 @@ public class AbsListViewBaseFragment extends BaseFragment {
 
 	protected boolean pauseOnScroll = false;
 	protected boolean pauseOnFling = true;
-
+	
+	
 	@Override
 	public void onResume() {
 		super.onResume();
@@ -53,7 +55,10 @@ public class AbsListViewBaseFragment extends BaseFragment {
 				return super.onOptionsItemSelected(item);
 		}
 	}
-
+	
+	
+	
+	
 	protected void startImagePagerActivity(int position) {
 		Intent intent = new Intent(getActivity(), ContextA.class);
 //		intent.putExtra(Constants.Extra.FRAGMENT_INDEX, ImagePagerFragment.INDEX);
