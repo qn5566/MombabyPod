@@ -6,23 +6,42 @@ import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.ShareActionProvider;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.mombaby.system.SystemApplication;
 
 import com.mombaby.tool.DynamicShareActionProvider;
 import com.mombaby.MombabyPod.R;
 
 public class ContextA extends ActionBarActivity {
-	public ShareActionProvider mShareActionProvider;
 
+	public ShareActionProvider mShareActionProvider;
+	ListView Context_listView ;
+	View mHeader;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.contexta);
+		LayoutInflater inflater=(LayoutInflater)getSystemService(this.LAYOUT_INFLATER_SERVICE); 
+		mHeader = inflater.inflate(R.layout.header, null);
+		
+		Context_listView = (ListView) findViewById(R.id.Context_listView);
+		
+		Context_listView.addHeaderView(mHeader);
+		Context_listView.setAdapter(new ContextText(this,R.layout.context_layout
+				,SystemApplication.Context_brief,SystemApplication.Context_desp));
 
 	}
 
+	
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.custom, menu);
@@ -35,7 +54,7 @@ public class ContextA extends ActionBarActivity {
 			@Override
 			public Bundle onShareIntentExtrasUpdate() {
 				Bundle extras = new Bundle();
-				TextView shareEdit = (TextView) findViewById(R.id.contexta);
+				TextView shareEdit = (TextView) findViewById(R.id.context_View1);
 				extras.putString(android.content.Intent.EXTRA_TEXT, shareEdit
 						.getText().toString());
 				return extras;
@@ -61,6 +80,10 @@ public class ContextA extends ActionBarActivity {
 		return true;
 	}
 
+	
+	
+
+	
 	private class MyShareAsyncTask extends AsyncTask<Intent, Void, Intent> {
 
 		@Override
@@ -78,7 +101,7 @@ public class ContextA extends ActionBarActivity {
 				e.printStackTrace();
 			}
 			//想要分享的內容位置
-			TextView shareEdit = (TextView) findViewById(R.id.contexta);
+			TextView shareEdit = (TextView) findViewById(R.id.context_View1);
 			intents[0].putExtra(android.content.Intent.EXTRA_TEXT,
 					"Shared from an AsyncTask: "
 							+ shareEdit.getText().toString());

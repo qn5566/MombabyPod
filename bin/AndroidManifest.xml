@@ -12,12 +12,13 @@
     
     <application
         android:allowBackup="true"
-        android:name="com.mombaby.system.SystemApplication"
+        android:name="com.mombaby.MombabyPod.system.SystemApplication"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/CustomTheme">
+        android:theme="@style/CustomActionBarTheme">
         <activity
             android:name="com.mombaby.MombabyPod.MainActivity"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +27,7 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="com.mombaby.context.ContextA"
+        <activity android:name="com.mombaby.MombabyPod.context.ContextA"
             android:theme="@style/Theme.AppCompat"
              >
         </activity>

@@ -1,7 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+
+    >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -25,54 +27,19 @@
             android:layout_height="fill_parent"
             android:orientation="vertical" >
 
-            <FrameLayout
-                android:id="@+id/frameLayout_c"
+            <com.mombaby.MombabyPod.menu.tool.GridViewWithHeaderAndFooter
+                android:id="@+id/grid_view"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" >
-
-                <ImageView
-                    android:id="@+id/content_title_c"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/content_1" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|left"
-                    android:background="@null"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:id="@+id/content_title_up_c"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:text="@string/content_title" />
-
-                    <TextView
-                        android:id="@+id/content_title_down_c"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:text="@string/content_title2" />
-                </LinearLayout>
-            </FrameLayout>
-
-            <GridView
-                android:id="@+id/gridview"
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
-                android:columnWidth="200dp"
-                android:gravity="center"
-                android:horizontalSpacing="0dp"
+                android:layout_height="match_parent"
+                android:fadingEdge="none"
+                android:focusable="false"
+                android:horizontalSpacing="10dp"
+                android:listSelector="@android:color/transparent"
                 android:numColumns="2"
-                android:stretchMode="columnWidth"
-                android:verticalSpacing="0dp" />
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:stretchMode="columnWidth" />
         </LinearLayout>
     </LinearLayout>
 

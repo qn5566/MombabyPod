@@ -10,7 +10,9 @@ import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
+import com.mombaby.system.SystemApplication;
 import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -19,17 +21,14 @@ import com.mombaby.MombabyPod.MainActivity;
 
 public class DataBase_ContentList extends AsyncTask<String, Void, Void> {
 
-	public  ArrayList<String> TitleList = new ArrayList<String>();
-//	public ArrayList<CharSequence> activityList = new ArrayList<CharSequence>();
-	ArrayList<JSONArray> activityInfoList = new ArrayList<JSONArray>();
 	String TAG = "JsonObject";
 	MainActivity context;
+	ArrayList<String> Context_article = new ArrayList<String>();
+	ArrayList<String> Context_content = new ArrayList<String>();
 
-	public DataBase_ContentList(MainActivity ctx, ArrayList<String> aList) {
+	public DataBase_ContentList(MainActivity ctx) {
 		context = ctx;
-		this.TitleList = aList;
 	}
-
 
 	@Override
 	protected Void doInBackground(String... params) {
@@ -37,8 +36,10 @@ public class DataBase_ContentList extends AsyncTask<String, Void, Void> {
 			Log.v(TAG, "joey go json");
 			String result = "";
 			try {
-				URL url = new URL("http://mpod.elaiis.com/mda/subclasslist.php"+params[0]);
-				Log.v(TAG, "joey go json : "+ url);
+				URL url = new URL(
+						"http://mpod.elaiis.com/mda/article.php?token="
+								+ params[0]);
+				Log.v(TAG, "joey go json : " + url);
 				HttpURLConnection urlConn = (HttpURLConnection) url
 						.openConnection();
 				if (urlConn.getResponseCode() == HttpURLConnection.HTTP_OK) {
@@ -51,20 +52,33 @@ public class DataBase_ContentList extends AsyncTask<String, Void, Void> {
 						result = result + str;
 					}
 					// 把舊的清掉 讓新的讀進去
-					this.TitleList.clear();
-					// activityInfoList.clear();
 
-					JSONArray jsonActs = new JSONArray(result);
+					JSONObject jsonObject = new JSONObject(result);
 
-					for (int i = 0; i < jsonActs.length(); i++) {
-						this.TitleList.add(jsonActs.getJSONObject(i).getString(
-								"name"));
-						// activityInfoList.add(jsonActs.getJSONObject(i).getJSONArray("showInfo"));
-
+					// 直接讀取
+					SystemApplication.Context_title
+							.add(new JSONObject(jsonObject.getString("article"))
+									.getString("title"));
+					//內容Array
+					JSONArray jsonArray = new JSONArray(jsonObject.getString("content"));
+					//Context_content.add(jsonObject.getString("content"));
+					
+					for (int i = 0; i < jsonArray.length(); i++) {
+						if(!jsonArray.getJSONObject(i).getString("brief").equals("")){
+						SystemApplication.Context_brief.add(jsonArray
+								.getJSONObject(i).getString("brief"));
+						}
+						if(!jsonArray.getJSONObject(i).getString("desp").equals("")){
+						SystemApplication.Context_desp.add(jsonArray
+								.getJSONObject(i).getString("desp"));
+						}
 					}
+					
+					Log.v(TAG, "joey Context_title.size() : "
+							+ SystemApplication.Context_title.size());
+					Log.v(TAG, "joey Context_brief.size() : "
+							+ SystemApplication.Context_brief.size());
 
-					context.TopTitle();
-					Log.v(TAG,"joey activityList.size() : "+this.TitleList.size());
 					// 執行完之後要關閉
 					reader.close();
 
