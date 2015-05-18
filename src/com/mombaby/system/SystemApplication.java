@@ -16,7 +16,8 @@ import android.os.Build;
 import android.os.StrictMode;
 
 public class SystemApplication extends Application {
-
+	//----------------圖片
+	public static String ArticleList_Pic_Path = "http://mpod.elaiis.com";
 	// ---------------第一
 	public static ArrayList<String> TitleList = new ArrayList<String>();
 	public static ArrayList<String> Title_id = new ArrayList<String>();
@@ -25,8 +26,11 @@ public class SystemApplication extends Application {
 	public static ArrayList<String> ArticleList_rkey = new ArrayList<String>();
 	public static ArrayList<String> ArticleList_brief = new ArrayList<String>();
 	public static ArrayList<String> ArticleList_pic = new ArrayList<String>();
-	public static String ArticleList_Pic_Path = "http://mpod.elaiis.com";
-
+	//----------------第三
+	public static ArrayList<String> Context_title = new ArrayList<String>();
+	public static ArrayList<String> Context_brief = new ArrayList<String>();
+	public static ArrayList<String> Context_desp = new ArrayList<String>();
+	
 	public static Boolean StyleA = false;
 	public static Boolean StyleB = false;
 	public static Boolean StyleC = false;

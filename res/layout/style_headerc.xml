@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+
+    <ImageView
+        android:id="@+id/header_image_c"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/content_1" />
+
+    <ImageView
+        android:id="@+id/ad_image_c"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:src="@drawable/ad_defaut" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:background="@color/alpha_gray"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/header_title_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/context_title"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/header_content_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/context_content" />
+    </LinearLayout>
+    
+    <ProgressBar
+        android:id="@+id/progress"
+        style="@style/ProgressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:indeterminate="false"
+        android:max="100" />
+
+</FrameLayout>

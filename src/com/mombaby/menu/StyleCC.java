@@ -45,6 +45,7 @@ public class StyleCC extends AbsListViewBaseFragment {
 		super.onCreate(savedInstanceState);
 		Log.v(TAG, "joey StyleA : onCreate");
 		SystemApplication.StyleC = true;
+		main = new MainActivity();
 
 	}
 
@@ -60,6 +61,8 @@ public class StyleCC extends AbsListViewBaseFragment {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				startImagePagerActivity(position);
+				//文章內容
+				main.DataBase_ContentList(position);
 			}
 		});
 		return rootView;
