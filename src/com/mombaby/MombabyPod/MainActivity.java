@@ -25,12 +25,19 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 import com.navdrawer.SimpleSideDrawer;
+<<<<<<< HEAD
 import com.mombaby.MombabyPod.context.ContextText;
 import com.mombaby.MombabyPod.data.DataBase_TitleList;
 import com.mombaby.MombabyPod.data.DataBase_ArticleList;
 import com.mombaby.MombabyPod.data.DataBase_ContentList;
 import com.mombaby.MombabyPod.system.SystemApplication;
 import com.mombaby.MombabyPod.context.ContextA;
+=======
+import com.mombaby.data.DataBase_TitleList;
+import com.mombaby.data.DataBase_ArticleList;
+import com.mombaby.data.DataBase_ContentList;
+import com.mombaby.system.SystemApplication;
+>>>>>>> origin/master
 
 public class MainActivity extends ActionBarActivity implements OnClickListener {
 
@@ -49,6 +56,10 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 
 	}
 
+	public MainActivity() {
+
+	}
+
 	public static ArrayList<String> TitleList = new ArrayList<String>();
 	public static ArrayList<String> Title_id = new ArrayList<String>();
 
@@ -61,15 +72,25 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 		setContentView(R.layout.activity_main);
 
 		initMeun();
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 		DataTitle();
 		StyleSetting();
 	}
 
 	// 初始化Menu選單
 	public void initMeun() {
+<<<<<<< HEAD
 		stylea = new StyleA(this);
 		styleb = new StyleB(this);
 		stylec = new StyleC(this);
+=======
+		stylea = new StyleAA(this);
+		styleb = new StyleBB(this);
+		stylec = new StyleCC(this);
+>>>>>>> origin/master
 	}
 
 	// 資料抓取Title
@@ -99,17 +120,33 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 
 	}
 
+<<<<<<< HEAD
 	// 客製化的TitleBar
 	public void TopTitle() {
 		runOnUiThread(new Runnable() {
+=======
+	// 抓取內文資料
+	public void DataBase_ContentList(int pos) {
+		ContentData = new DataBase_ContentList(this);
+		ContentData.execute(SystemApplication.ArticleList_rkey.get(pos));
+	}
+
+	// 客製化的TitleBar
+	public void TopTitle() {
+		runOnUiThread(new Runnable() {
+
+>>>>>>> origin/master
 			@Override
 			public void run() {
 				ActionBar mActionBar = getSupportActionBar();
 				mActionBar.setDisplayShowHomeEnabled(false);
 				mActionBar.setDisplayShowTitleEnabled(false);
 				mActionBar.setDisplayShowCustomEnabled(true);
+<<<<<<< HEAD
 //				mActionBar.setBackgroundDrawable(
 //						new ColorDrawable(R.color.pink));
+=======
+>>>>>>> origin/master
 				LayoutInflater mInflater = LayoutInflater
 						.from(MainActivity.this);
 				// 客製化的View帶入

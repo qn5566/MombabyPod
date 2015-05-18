@@ -369,13 +369,20 @@ int id action_refresh 0x7f09006f
 int id action_search 0x7f090070
 int id action_settings 0x7f090071
 int id activity_chooser_view_content 0x7f090021
+<<<<<<< HEAD
 int id ad_image_a 0x7f09005b
 int id ad_image_b 0x7f090061
 int id ad_image_c 0x7f090067
+=======
+int id ad_image_a 0x7f090058
+int id ad_image_b 0x7f09005e
+int id ad_image_c 0x7f090064
+>>>>>>> origin/master
 int id always 0x7f090014
 int id beginning 0x7f09001b
 int id checkbox 0x7f090029
 int id collapseActionView 0x7f090015
+<<<<<<< HEAD
 int id content_c 0x7f090056
 int id content_down_c 0x7f090058
 int id content_title_a 0x7f09005d
@@ -385,6 +392,20 @@ int id content_title_down_b 0x7f090065
 int id content_title_up_a 0x7f09005e
 int id content_title_up_b 0x7f090064
 int id content_up_c 0x7f090057
+=======
+int id content_c 0x7f090053
+int id content_down_c 0x7f090055
+int id content_title_a 0x7f09005a
+int id content_title_b 0x7f090060
+int id content_title_c 0x7f090065
+int id content_title_down_a 0x7f09005c
+int id content_title_down_b 0x7f090062
+int id content_title_down_c 0x7f090067
+int id content_title_up_a 0x7f09005b
+int id content_title_up_b 0x7f090061
+int id content_title_up_c 0x7f090066
+int id content_up_c 0x7f090054
+>>>>>>> origin/master
 int id contentimage 0x7f090041
 int id contenttext1 0x7f090042
 int id contenttext1_b 0x7f090044
@@ -405,6 +426,7 @@ int id end 0x7f09001c
 int id expand_activities_button 0x7f090022
 int id expanded_menu 0x7f090028
 int id favour_button 0x7f09004c
+<<<<<<< HEAD
 int id frameLayout_a 0x7f09005c
 int id frameLayout_b 0x7f090062
 int id frameLayout_c 0x7f090055
@@ -413,6 +435,13 @@ int id grid_view 0x7f090068
 int id header_content 0x7f090052
 int id header_image 0x7f090050
 int id header_title 0x7f090051
+=======
+int id frameLayout_a 0x7f090059
+int id frameLayout_b 0x7f09005f
+int id frameLayout_c 0x7f090052
+int id grid 0x7f09004f
+int id gridview 0x7f090068
+>>>>>>> origin/master
 int id home 0x7f090000
 int id homeAsUp 0x7f09000e
 int id home_layout 0x7f09003f
@@ -425,8 +454,13 @@ int id item_clear_memory_cache 0x7f090072
 int id item_pause_on_fling 0x7f090075
 int id item_pause_on_scroll 0x7f090074
 int id listMode 0x7f09000a
+<<<<<<< HEAD
 int id listView_a 0x7f090060
 int id listView_b 0x7f090066
+=======
+int id listView_a 0x7f09005d
+int id listView_b 0x7f090063
+>>>>>>> origin/master
 int id list_item 0x7f090025
 int id menu_item_share 0x7f09006d
 int id menu_item_share_later 0x7f09006e
@@ -434,7 +468,11 @@ int id middle 0x7f09001d
 int id never 0x7f090017
 int id none 0x7f09000f
 int id normal 0x7f09000b
+<<<<<<< HEAD
 int id progress 0x7f090053
+=======
+int id progress 0x7f090050
+>>>>>>> origin/master
 int id progress_circular 0x7f090007
 int id progress_horizontal 0x7f090008
 int id radio 0x7f09002b
@@ -459,11 +497,19 @@ int id style_btn 0x7f09006b
 int id style_menu 0x7f090069
 int id submit_area 0x7f09003c
 int id tabMode 0x7f09000c
+<<<<<<< HEAD
 int id text 0x7f090054
 int id title 0x7f090027
 int id title_text 0x7f09006a
 int id txtSpn 0x7f09005a
 int id txtSpnDropDown 0x7f090059
+=======
+int id text 0x7f090051
+int id title 0x7f090027
+int id title_text 0x7f09006a
+int id txtSpn 0x7f090057
+int id txtSpnDropDown 0x7f090056
+>>>>>>> origin/master
 int id up 0x7f090001
 int id useLogo 0x7f090013
 int id withText 0x7f090018
