@@ -11,9 +11,6 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 import com.mombaby.MombabyPod.MainActivity;
@@ -24,7 +21,7 @@ import com.mombaby.menu.StyleCC;
 
 public class DataBase_ArticleList extends AsyncTask<String, Void, Void> {
 
-	ArrayList<JSONArray> activityInfoList = new ArrayList<JSONArray>();
+	
 	String TAG = "DataBase_ArticleList";
 	MainActivity context;
 	StyleAA Stylea;

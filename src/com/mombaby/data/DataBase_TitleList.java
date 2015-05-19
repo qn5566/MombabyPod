@@ -18,7 +18,6 @@ import com.mombaby.system.SystemApplication;
 
 public class DataBase_TitleList extends AsyncTask<String, Void, Void> {
 
-	ArrayList<JSONArray> activityInfoList = new ArrayList<JSONArray>();
 	String TAG = "JsonObject";
 	MainActivity context;
 
