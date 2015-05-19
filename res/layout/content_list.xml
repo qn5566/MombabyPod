@@ -34,15 +34,22 @@
             android:id="@+id/contenttext1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Title" />
+            android:layout_marginTop="5dp"
+            android:paddingLeft="9dp"
+            android:paddingRight="9dp"
+            android:text="@string/content_title"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/contenttext2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Content" />
+             android:layout_marginBottom="5dp"
+            android:paddingLeft="9dp"
+            android:paddingRight="9dp"
+            android:text="@string/context_content"
+            android:textSize="12sp" />
     </LinearLayout>
 
 </LinearLayout>

@@ -6,10 +6,11 @@ import com.mombaby.MombabyPod.R;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import com.mombaby.menu.StyleAA;
-import com.mombaby.menu.StyleBB;
-import com.mombaby.menu.StyleCC;
+import com.mombaby.MombabyPod.menu.StyleA;
+import com.mombaby.MombabyPod.menu.StyleB;
+import com.mombaby.MombabyPod.menu.StyleC;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -24,13 +25,12 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 import com.navdrawer.SimpleSideDrawer;
-import com.mombaby.data.DataBase_TitleList;
-import com.mombaby.data.DataBase_ArticleList;
-import com.mombaby.data.DataBase_ContentList;
-import com.mombaby.system.SystemApplication;
-import com.mombaby.menu.StyleA;
-import com.mombaby.menu.StyleB;
-import com.mombaby.menu.StyleC;
+import com.mombaby.MombabyPod.context.ContextText;
+import com.mombaby.MombabyPod.data.DataBase_TitleList;
+import com.mombaby.MombabyPod.data.DataBase_ArticleList;
+import com.mombaby.MombabyPod.data.DataBase_ContentList;
+import com.mombaby.MombabyPod.system.SystemApplication;
+import com.mombaby.MombabyPod.context.ContextA;
 
 public class MainActivity extends ActionBarActivity implements OnClickListener {
 
@@ -41,49 +41,51 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	DataBase_TitleList TitleData;
 	DataBase_ArticleList ArticleData;
 	DataBase_ContentList ContentData;
-	StyleAA stylea;
-	StyleBB styleb;
-	StyleCC stylec;
+	StyleA stylea;
+	StyleB styleb;
+	StyleC stylec;
 
-	public static ArrayList<String> TitleList = new ArrayList<String>();
-	public static ArrayList<String> Title_id = new ArrayList<String>();
+	public MainActivity() {
+
+	}
 
 	String TAG = "MainActivity";
 	ArrayAdapter<String> arrAdapSpnRegion2;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
 		initMeun();
-		
 		DataTitle();
-		// TopTitle();
 		StyleSetting();
 	}
-	
-	//初始化Menu選單
-	public void initMeun(){
-		stylea = new StyleAA(this);
-		styleb = new StyleBB(this);
-		stylec = new StyleCC(this);
+
+	// 初始化Menu選單
+	public void initMeun() {
+		stylea = new StyleA(this);
+		styleb = new StyleB(this);
+		stylec = new StyleC(this);
 	}
-	
+
 	// 資料抓取Title
 	public void DataTitle() {
-		TitleData = new DataBase_TitleList(this, TitleList, Title_id);
+		TitleData = new DataBase_TitleList(this);
 		TitleData.execute();
 
 	}
+	
+	//重新整理
+	public void ContextA_Reflesh(){
+		ContextA aa = new ContextA();
+		aa.initContextText();
+		
+	}
 
-	// 資料抓取Title內容
+	//抓取所選取的資料short_desp
 	public void DataTitle_con(int pos) {
 		ArticleData = new DataBase_ArticleList(this,
-				SystemApplication.ArticleList_title,
-				SystemApplication.ArticleList_rkey,
-				SystemApplication.ArticleList_brief,
-				SystemApplication.ArticleList_pic,
 				stylea, styleb, stylec);
 		Log.v(TAG, "joey SystemApplication.Title_id.get(pos) : "
 				+ SystemApplication.Title_id.get(pos));
@@ -91,45 +93,46 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 
 	}
 
-	
-	
 	// 客製化的TitleBar
 	public void TopTitle() {
-		ActionBar mActionBar = getSupportActionBar();
-		mActionBar.setDisplayShowHomeEnabled(false);
-		mActionBar.setDisplayShowTitleEnabled(false);
-		mActionBar.setDisplayShowCustomEnabled(true);
-		LayoutInflater mInflater = LayoutInflater.from(this);
-		// 客製化的View帶入
-		View mCustomView = mInflater.inflate(R.layout.title_bar, null);
-		ImageView imageviewbtn = null;
-		// 設定事件
-		int titleOnClick[] = { R.id.style_btn, R.id.search_btn };
-		for (int i = 0; i < titleOnClick.length; i++) {
-			if ((imageviewbtn = (ImageView) mCustomView
-					.findViewById(titleOnClick[i])) != null)
-				imageviewbtn.setOnClickListener(this);
-		}
-		// 頻道設定
-		Spinner mTitleTextView = (Spinner) mCustomView
-				.findViewById(R.id.title_text);
-		Log.v(TAG, "joey TitleData.activityList :"
-				+ SystemApplication.TitleList);
-		ArrayAdapter<String> arrAdapSpnRegion2 = new ArrayAdapter<String>(this,
-				R.layout.spinner_item, SystemApplication.TitleList);
-		// ArrayAdapterForSpinnerRegion arrAdapSpnRegion2 = new
-		// ArrayAdapterForSpinnerRegion(
-		// this, R.layout.spinner_item, TitleData.activityList
-		// , mTitleTextView);
-		// Title設定
-		arrAdapSpnRegion2
-				.setDropDownViewResource(R.layout.spinner_dropdown_item);
+		runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				ActionBar mActionBar = getSupportActionBar();
+				mActionBar.setDisplayShowHomeEnabled(false);
+				mActionBar.setDisplayShowTitleEnabled(false);
+				mActionBar.setDisplayShowCustomEnabled(true);
+				LayoutInflater mInflater = LayoutInflater
+						.from(MainActivity.this);
+				// 客製化的View帶入
+				View mCustomView = mInflater.inflate(R.layout.title_bar, null);
+				ImageView imageviewbtn = null;
+				// 設定事件
+				int titleOnClick[] = { R.id.style_btn, R.id.search_btn };
+				for (int i = 0; i < titleOnClick.length; i++) {
+					if ((imageviewbtn = (ImageView) mCustomView
+							.findViewById(titleOnClick[i])) != null)
+						imageviewbtn.setOnClickListener(MainActivity.this);
+				}
+				// 頻道切換設定
+				Spinner mTitleTextView = (Spinner) mCustomView
+						.findViewById(R.id.title_text);
+				Log.v(TAG, "joey TitleData.activityList :"
+						+ SystemApplication.TitleList);
+				ArrayAdapter<String> arrAdapSpnRegion2 = new ArrayAdapter<String>(
+						MainActivity.this, R.layout.spinner_item,
+						SystemApplication.TitleList);
+				// 下拉選單設定
+				arrAdapSpnRegion2
+						.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
-		mTitleTextView.setAdapter(arrAdapSpnRegion2);
-		mTitleTextView.setOnItemSelectedListener(spnRegionOnItemSelected);
+				mTitleTextView.setAdapter(arrAdapSpnRegion2);
+				mTitleTextView
+						.setOnItemSelectedListener(spnRegionOnItemSelected);
+				mActionBar.setCustomView(mCustomView);
 
-		// mTitleTextView.setOnClickListener(this);
-		mActionBar.setCustomView(mCustomView);
+			}
+		});
 
 	}
 
@@ -157,20 +160,21 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 
 		switch (position) {
 		case 0:
-			fragment = new StyleAA();
+			fragment = new StyleA();
 			break;
 
 		case 1:
-			fragment = new StyleBB();
+			fragment = new StyleB();
 			break;
 
 		case 2:
-			fragment = new StyleCC();
+			fragment = new StyleC();
 			break;
 		}
-
+		
 		FragmentTransaction tran = getFragmentManager().beginTransaction();
 		tran.replace(R.id.home_layout, fragment).commit();
+		vSlideHolder.toggleLeftDrawer();
 	}
 
 	@Override
@@ -194,7 +198,6 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 
 	}
 
-	
 	// 標題選單
 	private Spinner.OnItemSelectedListener spnRegionOnItemSelected = new Spinner.OnItemSelectedListener() {
 
@@ -202,8 +205,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 		public void onItemSelected(AdapterView<?> parent, View v, int position,
 				long id) {
 			DataTitle_con(position);
-			
-			
+
 			Toast.makeText(getApplicationContext(), "你選擇了" + position,
 					Toast.LENGTH_SHORT).show();
 
@@ -217,4 +219,23 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 
 	};
 
+	//關閉
+	@Override
+	protected void onDestroy() {
+		Log.v(TAG,"joey onDestroy()");
+		super.onDestroy();
+	}
+
+	//跳頁中
+	@Override
+	protected void onStop() {
+		Log.v(TAG,"joey onStop()");
+		super.onStop();
+	}
+	//回來
+	@Override
+	protected void onRestart() {
+		Log.v(TAG,"joey onRestart()");
+		super.onRestart();
+	}
 }

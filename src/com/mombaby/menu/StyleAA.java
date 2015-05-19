@@ -81,6 +81,8 @@ public class StyleAA extends AbsListViewBaseFragment {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				startImagePagerActivity(position);
+				//文章內容
+				main.DataBase_ContentList(position);
 			}
 		});
 	}

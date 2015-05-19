@@ -4,7 +4,7 @@
     <string name="app_name">MombabyPod</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_bar">我的頻道</string>
+    <string name="title_bar_string">我的頻道</string>
     <string name="content_title">剖析孕婦20大禁忌</string>
     <string name="content_title2">意外流產的發生無法預防，來了又</string>
     <string name="no_app_to_share">沒有app可分享!</string>
@@ -19,5 +19,14 @@
     <string name="menu_item_clear_disc_cache">Clear disc cache</string>
     <string name="menu_item_pause_on_scroll">Pause on scroll</string>
     <string name="menu_item_pause_on_fling">Pause on fling</string>
+    
+    
+    <string name="pull_to_refresh">下拉可以更新</string>  
+    <string name="release_to_refresh">釋放立即刷新</string>  
+    <string name="refreshing">正在刷新…</string>  
+    <string name="not_updated_yet">暫未更新過</string>  
+    <string name="updated_at">上次更新於%1$s前</string>  
+    <string name="updated_just_now">剛剛更新過</string>  
+    <string name="time_error">時間有問題</string>  
 
 </resources>
