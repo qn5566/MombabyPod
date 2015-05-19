@@ -39,7 +39,10 @@ public class GridViewWithHeaderAndFooter extends GridView {
 
     public static boolean DEBUG = false;
 
+<<<<<<< HEAD
     public String TAG = "GridViewWithHeaderAndFooter";
+=======
+>>>>>>> origin/master
     /**
      * A class that represents a fixed view in a list, for example a header at the top
      * or a footer at the bottom.
@@ -370,6 +373,7 @@ public class GridViewWithHeaderAndFooter extends GridView {
             view.setLayoutParams(p);
         }
         int childHeightSpec = getChildMeasureSpec(
+<<<<<<< HEAD
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.EXACTLY), 0, p.height);
         Log.v(TAG,"joey Grid childHeightSpec :" + childHeightSpec);
 //        int childHeightSpec = getChildMeasureSpec(
@@ -391,6 +395,14 @@ public class GridViewWithHeaderAndFooter extends GridView {
 //        mViewForMeasureRowHeight = view;
 //        mRowHeight = view.getMeasuredHeight();
   
+=======
+                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED), 0, p.height);
+        int childWidthSpec = getChildMeasureSpec(
+                MeasureSpec.makeMeasureSpec(mColumnWidth, MeasureSpec.EXACTLY), 0, p.width);
+        view.measure(childWidthSpec, childHeightSpec);
+        mViewForMeasureRowHeight = view;
+        mRowHeight = view.getMeasuredHeight();
+>>>>>>> origin/master
         return mRowHeight;
     }
 
@@ -483,7 +495,11 @@ public class GridViewWithHeaderAndFooter extends GridView {
         private final ListAdapter mAdapter;
         static final ArrayList<FixedViewInfo> EMPTY_INFO_LIST =
                 new ArrayList<FixedViewInfo>();
+<<<<<<< HEAD
         public String TAG = "HeaderViewGridAdapter";
+=======
+
+>>>>>>> origin/master
         // This ArrayList is assumed to NOT be null.
         ArrayList<FixedViewInfo> mHeaderViewInfos;
         ArrayList<FixedViewInfo> mFooterViewInfos;
@@ -524,7 +540,10 @@ public class GridViewWithHeaderAndFooter extends GridView {
         }
 
         public void setRowHeight(int height) {
+<<<<<<< HEAD
         	Log.v(TAG, "joey Grid setRowHeight : " + height);
+=======
+>>>>>>> origin/master
             mRowHeight = height;
         }
 

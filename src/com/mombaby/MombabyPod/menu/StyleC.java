@@ -16,9 +16,14 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ProgressBar;
+<<<<<<< HEAD
 import android.widget.TextView;
 
 import com.mombaby.MombabyPod.system.SystemApplication;
+=======
+import com.mombaby.MombabyPod.system.SystemApplication;
+import com.mombaby.MombabyPod.system.SystemApplication.ViewHolder;
+>>>>>>> origin/master
 import com.mombaby.MombabyPod.MainActivity;
 import com.mombaby.MombabyPod.R;
 import com.mombaby.MombabyPod.context.ContextText;
@@ -31,8 +36,11 @@ import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListene
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.mombaby.MombabyPod.menu.tool.GridViewWithHeaderAndFooter;
+<<<<<<< HEAD
 import com.mombaby.MombabyPod.tool.RefreshableView;
 import com.mombaby.MombabyPod.tool.RefreshableView.PullToRefreshListener;
+=======
+>>>>>>> origin/master
 
 public class StyleC extends AbsListViewBaseFragment {
 	MainActivity main;
@@ -43,8 +51,11 @@ public class StyleC extends AbsListViewBaseFragment {
 	ImageAdapter imageAdapter;
 	ImageView HeaderImage;
 	ProgressBar progressbar;
+<<<<<<< HEAD
 	TextView Header_title_c ,Header_content_c;
 	RefreshableView refreshableView; 
+=======
+>>>>>>> origin/master
 
 	public static final int INDEX = 1;
 
@@ -69,6 +80,7 @@ public class StyleC extends AbsListViewBaseFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.style_c, container, false);
+<<<<<<< HEAD
 		//設定首圖
 		mHeader = inflater.inflate(R.layout.style_headerc, null);
 		progressbar = (ProgressBar) mHeader.findViewById(R.id.progress);
@@ -82,6 +94,19 @@ public class StyleC extends AbsListViewBaseFragment {
 //		CustomReflash(rootView);
 		imageAdapter = new ImageAdapter(getActivity(),
 				SystemApplication.ArticleList_pic,HeaderImage,progressbar ,Header_title_c, Header_content_c);
+=======
+		mHeader = inflater.inflate(R.layout.style_headerc, null);
+		progressbar = (ProgressBar) mHeader.findViewById(R.id.progress);
+		// listView = (GridView) rootView.findViewById(R.id.gridview);
+
+		GridView = (GridViewWithHeaderAndFooter) rootView
+				.findViewById(R.id.grid_view);
+		HeaderImage = (ImageView) mHeader.findViewById(R.id.header_image_c);
+		//HeaderImage.setVisibility(View.GONE);
+		GridView.addHeaderView(mHeader);
+		imageAdapter = new ImageAdapter(getActivity(),
+				SystemApplication.ArticleList_pic,HeaderImage,progressbar);
+>>>>>>> origin/master
 		((GridViewWithHeaderAndFooter) GridView).setAdapter(imageAdapter);
 		GridView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
@@ -103,6 +128,7 @@ public class StyleC extends AbsListViewBaseFragment {
 		return rootView;
 	}
 
+<<<<<<< HEAD
 //	//下滑更新
 //		public void CustomReflash(View view){
 //			refreshableView = (RefreshableView) view.findViewById(R.id.refreshable_view); 
@@ -119,6 +145,9 @@ public class StyleC extends AbsListViewBaseFragment {
 //	        }, 0);  
 //	     
 //		}
+=======
+	
+>>>>>>> origin/master
 
 
 	// 重新整理
@@ -140,11 +169,17 @@ public class StyleC extends AbsListViewBaseFragment {
 		ImageView HeaderImage;
 		
 		ProgressBar Progressbar;
+<<<<<<< HEAD
 		
 		TextView Header_title_c ,Header_content_c;
 
 		ImageAdapter(Context context, ArrayList<String> Pic, ImageView headerImage,
 				ProgressBar progressbar,TextView header_title_c ,TextView header_content_c) {
+=======
+
+		ImageAdapter(Context context, ArrayList<String> Pic, ImageView headerImage,
+				ProgressBar progressbar) {
+>>>>>>> origin/master
 			inflater = LayoutInflater.from(context);
 
 			SystemApplication.IMAGE_URLS = Pic;
@@ -161,9 +196,12 @@ public class StyleC extends AbsListViewBaseFragment {
 			HeaderImage = headerImage;
 			
 			Progressbar = progressbar;
+<<<<<<< HEAD
 			
 			Header_title_c = header_title_c ;
 			Header_content_c = header_content_c;
+=======
+>>>>>>> origin/master
 		}
 
 		/*
@@ -211,15 +249,22 @@ public class StyleC extends AbsListViewBaseFragment {
 				holder.imageView = (ImageView) view.findViewById(R.id.image);
 				holder.progressBar = (ProgressBar) view
 						.findViewById(R.id.progress);
+<<<<<<< HEAD
 				holder.Style_title_c = (TextView)view.findViewById(R.id.style_title_c);
 				holder.Style_content_c = (TextView)view.findViewById(R.id.style_content_c);
+=======
+>>>>>>> origin/master
 				view.setTag(holder);
 			} else {
 				holder = (ViewHolder) view.getTag();
 			}
+<<<<<<< HEAD
 			//首頁設置
 			Header_title_c.setText(SystemApplication.ArticleList_title.get(0));
 			Header_content_c.setText(SystemApplication.ArticleList_short_desp.get(0));
+=======
+
+>>>>>>> origin/master
 			ImageLoader.getInstance().displayImage(
 					SystemApplication.IMAGE_URLS.get(0), HeaderImage,
 					options, new SimpleImageLoadingListener() {
@@ -248,9 +293,13 @@ public class StyleC extends AbsListViewBaseFragment {
 									* current / total));
 						}
 					});
+<<<<<<< HEAD
 			//其他			
 			holder.Style_title_c.setText(SystemApplication.ArticleList_title.get(adjust));
 			holder.Style_content_c.setText(SystemApplication.ArticleList_short_desp.get(adjust));
+=======
+			
+>>>>>>> origin/master
 			ImageLoader.getInstance().displayImage(
 					SystemApplication.IMAGE_URLS.get(adjust), holder.imageView,
 					options, new SimpleImageLoadingListener() {
@@ -283,10 +332,14 @@ public class StyleC extends AbsListViewBaseFragment {
 			return view;
 		}
 	}
+<<<<<<< HEAD
 	public static class ViewHolder {
 		public ImageView imageView;
 		public ProgressBar progressBar;
 		public TextView Style_title_c, Style_content_c;
 	}
+=======
+
+>>>>>>> origin/master
 	
 }

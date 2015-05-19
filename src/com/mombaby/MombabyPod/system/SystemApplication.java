@@ -32,7 +32,10 @@ public class SystemApplication extends Application {
 	public static ArrayList<String> ArticleList_rkey = new ArrayList<String>();
 	public static ArrayList<String> ArticleList_brief = new ArrayList<String>();
 	public static ArrayList<String> ArticleList_pic = new ArrayList<String>();
+<<<<<<< HEAD
 	public static ArrayList<String> ArticleList_short_desp = new ArrayList<String>();
+=======
+>>>>>>> origin/master
 	// ----------------第三
 	public static ArrayList<String> Context_title = new ArrayList<String>();
 	public static ArrayList<String> Context_brief = new ArrayList<String>();
@@ -135,6 +138,7 @@ public class SystemApplication extends Application {
 
 		return inSampleSize;
 	}
+<<<<<<< HEAD
 
 	public static void CleanTitleList(){
 	TitleList.clear();
@@ -147,5 +151,11 @@ public class SystemApplication extends Application {
 		ArticleList_brief.clear();
 		ArticleList_pic.clear();
 		ArticleList_short_desp.clear();
+=======
+	
+	public static class ViewHolder {
+		public ImageView imageView;
+		public ProgressBar progressBar;
+>>>>>>> origin/master
 	}
 }

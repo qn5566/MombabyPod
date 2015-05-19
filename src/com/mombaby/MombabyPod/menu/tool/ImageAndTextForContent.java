@@ -34,14 +34,19 @@ public class ImageAndTextForContent extends ArrayAdapter<String> {
 	private String[] mString;
 	private TypedArray mIcon;
 	private int mViewResource;
+<<<<<<< HEAD
 	public ArrayList<String> Contenttext1 = new ArrayList<String>();
 	public ArrayList<String> Contenttext2 = new ArrayList<String>();
+=======
+	public ArrayList<String> activityList = new ArrayList<String>();
+>>>>>>> origin/master
 	public ArrayList<String> IMAGE_URLS = new ArrayList<String>();
 	private DisplayImageOptions options;
 	private ImageLoadingListener animateFirstListener = new AnimateFirstDisplayListener();
 	String TAG = "ImageAndTextForContent";
 	ProgressBar Progressbar;
 	ImageView HeaderImage;
+<<<<<<< HEAD
 	TextView Header_title_a ,Header_content_a;
 
 	public ImageAndTextForContent(Context context, int Viewresource,
@@ -56,6 +61,19 @@ public class ImageAndTextForContent extends ArrayAdapter<String> {
 		IMAGE_URLS = Pic;
 		Header_title_a = header_title_a ;
 		Header_content_a = header_content_a;
+=======
+
+	public ImageAndTextForContent(Context context, int Viewresource,
+			ArrayList<String> acList, ArrayList<String> Pic, ImageView headerImage, ProgressBar progressbar) {
+		super(context, Viewresource, acList);
+		mInflater = (LayoutInflater) context
+				.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+		mViewResource = Viewresource;
+		activityList = acList;
+		IMAGE_URLS = Pic;
+		
+		
+>>>>>>> origin/master
 		
 		options = new DisplayImageOptions.Builder()
 				.showImageOnLoading(R.drawable.ic_stub)
@@ -75,16 +93,26 @@ public class ImageAndTextForContent extends ArrayAdapter<String> {
 
 
 
+<<<<<<< HEAD
 	public void refresh(ArrayList<String> Title, ArrayList<String> Short_desp) {
 		Contenttext1 = Title;
 		Contenttext2 = Short_desp;
 		notifyDataSetChanged();
 		
+=======
+	public void refresh(ArrayList<String> list) {
+		activityList = list;
+		notifyDataSetChanged();
+>>>>>>> origin/master
 	}
 
 	@Override
 	public int getCount() {
+<<<<<<< HEAD
 		int adjust = Contenttext1.size() - 1;
+=======
+		int adjust = activityList.size() - 1;
+>>>>>>> origin/master
 		// json檔
 		return adjust;
 	}
@@ -94,7 +122,11 @@ public class ImageAndTextForContent extends ArrayAdapter<String> {
 		// TODO Auto-generated method stub
 		// return mString[position];
 		// json檔
+<<<<<<< HEAD
 		return Contenttext1.get(position);
+=======
+		return activityList.get(position);
+>>>>>>> origin/master
 	}
 
 	@Override
@@ -111,6 +143,7 @@ public class ImageAndTextForContent extends ArrayAdapter<String> {
 		ImageLoader.getInstance().displayImage(IMAGE_URLS.get(adjust), iv,
 				options, animateFirstListener);
 		TextView tv = (TextView) convertView.findViewById(R.id.contenttext1);
+<<<<<<< HEAD
 		tv.setText(Contenttext1.get(adjust));
 		TextView tv2 = (TextView) convertView.findViewById(R.id.contenttext2);
 		tv2.setText(Contenttext2.get(adjust));		
@@ -119,6 +152,12 @@ public class ImageAndTextForContent extends ArrayAdapter<String> {
 		
 		Header_title_a.setText(Contenttext1.get(0));
 		Header_content_a.setText(Contenttext2.get(0));
+=======
+		tv.setText(activityList.get(adjust));
+		Log.v(TAG,
+				"joey PIC IMAGE_URLS.get(adjust)" + IMAGE_URLS.get(adjust));
+		
+>>>>>>> origin/master
 		ImageLoader.getInstance().displayImage(
 				IMAGE_URLS.get(0), HeaderImage,
 				options, new SimpleImageLoadingListener() {

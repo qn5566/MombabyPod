@@ -44,6 +44,13 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	StyleA stylea;
 	StyleB styleb;
 	StyleC stylec;
+<<<<<<< HEAD
+=======
+
+	public MainActivity() {
+
+	}
+>>>>>>> origin/master
 
 	public MainActivity() {
 
@@ -86,7 +93,14 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	//抓取所選取的資料short_desp
 	public void DataTitle_con(int pos) {
 		ArticleData = new DataBase_ArticleList(this,
+<<<<<<< HEAD
 				stylea, styleb, stylec);
+=======
+				SystemApplication.ArticleList_title,
+				SystemApplication.ArticleList_rkey,
+				SystemApplication.ArticleList_brief,
+				SystemApplication.ArticleList_pic, stylea, styleb, stylec);
+>>>>>>> origin/master
 		Log.v(TAG, "joey SystemApplication.Title_id.get(pos) : "
 				+ SystemApplication.Title_id.get(pos));
 		ArticleData.execute(SystemApplication.Title_id.get(pos));
@@ -102,6 +116,11 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 				mActionBar.setDisplayShowHomeEnabled(false);
 				mActionBar.setDisplayShowTitleEnabled(false);
 				mActionBar.setDisplayShowCustomEnabled(true);
+<<<<<<< HEAD
+=======
+//				mActionBar.setBackgroundDrawable(
+//						new ColorDrawable(R.color.pink));
+>>>>>>> origin/master
 				LayoutInflater mInflater = LayoutInflater
 						.from(MainActivity.this);
 				// 客製化的View帶入
@@ -114,7 +133,11 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 							.findViewById(titleOnClick[i])) != null)
 						imageviewbtn.setOnClickListener(MainActivity.this);
 				}
+<<<<<<< HEAD
 				// 頻道切換設定
+=======
+				// 頻道設定
+>>>>>>> origin/master
 				Spinner mTitleTextView = (Spinner) mCustomView
 						.findViewById(R.id.title_text);
 				Log.v(TAG, "joey TitleData.activityList :"
@@ -122,7 +145,11 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 				ArrayAdapter<String> arrAdapSpnRegion2 = new ArrayAdapter<String>(
 						MainActivity.this, R.layout.spinner_item,
 						SystemApplication.TitleList);
+<<<<<<< HEAD
 				// 下拉選單設定
+=======
+				// Title設定
+>>>>>>> origin/master
 				arrAdapSpnRegion2
 						.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
