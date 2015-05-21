@@ -28,9 +28,26 @@ public class DataBase_ArticleList extends AsyncTask<String, Void, Void> {
 	StyleB Styleb;
 	StyleC Stylec;
 
+<<<<<<< HEAD
 	public DataBase_ArticleList(MainActivity ctx ,StyleA stylea, StyleB styleb, StyleC stylec) {
 		context = ctx;
 
+=======
+<<<<<<< HEAD
+	public DataBase_ArticleList(MainActivity ctx ,StyleA stylea, StyleB styleb, StyleC stylec) {
+		context = ctx;
+
+=======
+	public DataBase_ArticleList(MainActivity ctx, ArrayList<String> title,
+			ArrayList<String> rkey, ArrayList<String> brief,
+			ArrayList<String> pic, StyleA stylea, StyleB styleb, StyleC stylec) {
+		context = ctx;
+		SystemApplication.ArticleList_title = title;
+		SystemApplication.ArticleList_rkey = rkey;
+		SystemApplication.ArticleList_brief = brief;
+		SystemApplication.ArticleList_pic = pic;
+>>>>>>> origin/master
+>>>>>>> origin/master
 
 		Stylea = stylea;
 		Styleb = styleb;
@@ -64,7 +81,14 @@ public class DataBase_ArticleList extends AsyncTask<String, Void, Void> {
 					SystemApplication.ArticleList_rkey.clear();
 					SystemApplication.ArticleList_brief.clear();
 					SystemApplication.ArticleList_pic.clear();
+<<<<<<< HEAD
 					SystemApplication.ArticleList_short_desp.clear();
+=======
+<<<<<<< HEAD
+					SystemApplication.ArticleList_short_desp.clear();
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
 					Log.v(TAG, "joey go 4 json");
 					JSONArray jsonActs = new JSONArray(result);
 					Log.v(TAG,
@@ -76,8 +100,16 @@ public class DataBase_ArticleList extends AsyncTask<String, Void, Void> {
 								.getJSONObject(i).getString("rkey"));
 						SystemApplication.ArticleList_brief.add(jsonActs
 								.getJSONObject(i).getString("brief"));
+<<<<<<< HEAD
 						SystemApplication.ArticleList_short_desp.add(jsonActs
 								.getJSONObject(i).getString("short_desp"));
+=======
+<<<<<<< HEAD
+						SystemApplication.ArticleList_short_desp.add(jsonActs
+								.getJSONObject(i).getString("short_desp"));
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
 						SystemApplication.ArticleList_pic.add(
 								SystemApplication.ArticleList_Pic_Path+(jsonActs
 								.getJSONObject(i).getString("photo_path")));
@@ -89,20 +121,48 @@ public class DataBase_ArticleList extends AsyncTask<String, Void, Void> {
 					if (SystemApplication.StyleA) {
 
 						Stylea.refreshA();
+<<<<<<< HEAD
 						Log.v(TAG, "joey Styleb.refreshA() : OK");
+=======
+<<<<<<< HEAD
+						Log.v(TAG, "joey Styleb.refreshA() : OK");
+=======
+
+>>>>>>> origin/master
+>>>>>>> origin/master
 					}
 					Log.v(TAG, "joey Styleb :" + Styleb);
 					if (SystemApplication.StyleB) {
 
 						Styleb.refreshB();
+<<<<<<< HEAD
 						Log.v(TAG, "joey Styleb.refreshB() : OK");
+=======
+<<<<<<< HEAD
+						Log.v(TAG, "joey Styleb.refreshB() : OK");
+=======
+
+>>>>>>> origin/master
+>>>>>>> origin/master
 					}
 					if (SystemApplication.StyleC) {
 
 						Stylec.refreshC();
+<<<<<<< HEAD
 						Log.v(TAG, "joey Stylec.refreshC() : OK");
 					}
 					Log.v(TAG, "joey 總共文章數量 : "
+=======
+<<<<<<< HEAD
+						Log.v(TAG, "joey Stylec.refreshC() : OK");
+					}
+					Log.v(TAG, "joey 總共文章數量 : "
+=======
+
+					}
+					Log.v(TAG, "joey activityList.size() : "
+>>>>>>> origin/master
+>>>>>>> origin/master
 							+ SystemApplication.ArticleList_title.size());
 					// 執行完之後要關閉
 					reader.close();

@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+<<<<<<< HEAD
     android:background="@color/pink" >
 
     <Spinner
@@ -29,5 +30,69 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:src="@drawable/search_selector" />
+=======
+<<<<<<< HEAD
+    android:background="@color/pink" >
+
+    <Spinner
+        android:id="@+id/title_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:prompt="@string/title_bar_string"
+        android:spinnerMode="dialog"
+         />
+
+    <ImageView
+        android:id="@+id/style_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/style_selector" />
+
+    <ImageView
+        android:id="@+id/search_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/search_selector" />
+=======
+	android:background="@color/pink"
+     >
+
+        <Spinner
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:spinnerMode="dialog"
+           
+        	android:prompt="@string/title_bar"
+        	android:visibility="gone"
+        	 />
+
+        <ImageView
+            android:id="@+id/style_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            
+            android:layout_centerVertical="true"
+            android:src="@drawable/style_selector" />
+
+        <ImageView
+            android:id="@+id/search_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+              
+            android:layout_centerVertical="true"        
+            android:src="@drawable/search_selector" />
+>>>>>>> origin/master
+>>>>>>> origin/master
 
 </RelativeLayout>

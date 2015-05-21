@@ -1,7 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+
+    >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -13,12 +15,17 @@
             android:layout_height="fill_parent"
             android:orientation="vertical" >
 
+<<<<<<< HEAD
 
             <com.mombaby.MombabyPod.tool.RefreshableView
                 android:id="@+id/refreshable_view_c"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent" >
                 
+=======
+<<<<<<< HEAD
+
+>>>>>>> origin/master
                 <com.mombaby.MombabyPod.menu.tool.GridViewWithHeaderAndFooter
                     android:id="@+id/grid_view"
                     android:layout_width="match_parent"
@@ -32,9 +39,28 @@
                     android:paddingRight="12dp"
                     android:scrollbarStyle="outsideOverlay"
                     android:stretchMode="columnWidth" />
+<<<<<<< HEAD
                 
                  </com.mombaby.MombabyPod.tool.RefreshableView>
             
+=======
+            
+=======
+            <com.mombaby.MombabyPod.menu.tool.GridViewWithHeaderAndFooter
+                android:id="@+id/grid_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fadingEdge="none"
+                android:focusable="false"
+                android:horizontalSpacing="10dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="2"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:stretchMode="columnWidth" />
+>>>>>>> origin/master
+>>>>>>> origin/master
         </LinearLayout>
     </LinearLayout>
 

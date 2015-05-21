@@ -12,7 +12,10 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
 import com.mombaby.MombabyPod.MainActivity;
 import com.mombaby.MombabyPod.context.ContextA;
+<<<<<<< HEAD
 import com.mombaby.MombabyPod.context.Context_Web;
+=======
+>>>>>>> origin/master
 
 public class AbsListViewBaseFragment extends BaseFragment {
 
@@ -63,7 +66,11 @@ public class AbsListViewBaseFragment extends BaseFragment {
 
 	//主要傳送資料的地方
 	protected void startImagePagerActivity(int position) {
+<<<<<<< HEAD
 		Intent intent = new Intent(getActivity(), Context_Web.class);
+=======
+		Intent intent = new Intent(getActivity(), ContextA.class);
+>>>>>>> origin/master
 		Bundle mBundle = new Bundle();
 		mBundle.putSerializable("Data", position);
 		intent.putExtras(mBundle);

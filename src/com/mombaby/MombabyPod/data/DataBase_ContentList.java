@@ -19,14 +19,20 @@ import android.os.AsyncTask;
 import android.util.Log;
 import com.mombaby.MombabyPod.MainActivity;
 import com.mombaby.MombabyPod.context.ContextA;
+<<<<<<< HEAD
 import com.mombaby.MombabyPod.context.Context_Web;
+=======
+>>>>>>> origin/master
 
 public class DataBase_ContentList extends AsyncTask<String, Void, Void> {
 
 	String TAG = "JsonObject_DataBase";
 	MainActivity MainContext;
 	ContextA CtxA;
+<<<<<<< HEAD
 	Context_Web Ctx_webA;
+=======
+>>>>>>> origin/master
 	ArrayList<String> Context_article = new ArrayList<String>();
 	ArrayList<String> Context_content = new ArrayList<String>();
 
@@ -38,9 +44,12 @@ public class DataBase_ContentList extends AsyncTask<String, Void, Void> {
 	public DataBase_ContentList(ContextA ctxA) {
 		CtxA = ctxA;
 	}
+<<<<<<< HEAD
 	public DataBase_ContentList(Context_Web ctxa) {
 		Ctx_webA = ctxa;
 	}
+=======
+>>>>>>> origin/master
 	
 	@Override
 	protected Void doInBackground(String... params) {
@@ -48,9 +57,14 @@ public class DataBase_ContentList extends AsyncTask<String, Void, Void> {
 			Log.v(TAG, "joey go json 1");
 			String result = "";
 			try {
+<<<<<<< HEAD
 				// 原本的"http://mpod.elaiis.com/mda/article.php?token="
 				URL url = new URL(
 						"http://mpod.elaiis.com/mda/html/article.php?token="
+=======
+				URL url = new URL(
+						"http://mpod.elaiis.com/mda/article.php?token="
+>>>>>>> origin/master
 								+ params[0]);
 				Log.v(TAG, "joey go json : 2 " + url);
 				HttpURLConnection urlConn = (HttpURLConnection) url
@@ -96,8 +110,13 @@ public class DataBase_ContentList extends AsyncTask<String, Void, Void> {
 							+ SystemApplication.Context_title.size());
 					Log.v(TAG, "joey Context_brief.size() : "
 							+ SystemApplication.Context_brief.size());
+<<<<<<< HEAD
 				//	Ctx_webA.initContextText();
 					Log.v(TAG, "joey go json : 3 Ctx_webA.JoeyOK(); " );
+=======
+					CtxA.initContextText();
+					Log.v(TAG, "joey go json : 3 CtxA.JoeyOK(); " );
+>>>>>>> origin/master
 					// 執行完之後要關閉
 					reader.close();
 

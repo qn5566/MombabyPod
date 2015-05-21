@@ -1,11 +1,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:orientation="vertical" >
+=======
+<<<<<<< HEAD
+    android:orientation="vertical" >
+=======
+    android:orientation="vertical"
+
+    >
+>>>>>>> origin/master
+>>>>>>> origin/master
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        
         android:orientation="vertical" >
 
         <LinearLayout
@@ -13,8 +24,18 @@
             android:layout_height="fill_parent"
             android:orientation="vertical" >
 
+<<<<<<< HEAD
             <com.mombaby.MombabyPod.tool.RefreshableView
                 android:id="@+id/refreshable_view"
+=======
+<<<<<<< HEAD
+            <com.mombaby.MombabyPod.tool.RefreshableView
+                android:id="@+id/refreshable_view"
+=======
+            <ListView
+                android:id="@+id/listView_a"
+>>>>>>> origin/master
+>>>>>>> origin/master
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent" >
 

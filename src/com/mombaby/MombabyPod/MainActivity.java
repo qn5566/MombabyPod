@@ -44,10 +44,23 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	StyleA stylea;
 	StyleB styleb;
 	StyleC stylec;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
 
 	public MainActivity() {
 
 	}
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
+
+	public MainActivity() {
+
+	}
+>>>>>>> origin/master
 
 	String TAG = "MainActivity";
 	ArrayAdapter<String> arrAdapSpnRegion2;
@@ -75,7 +88,15 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 		TitleData.execute();
 
 	}
+	
+	//重新整理
+	public void ContextA_Reflesh(){
+		ContextA aa = new ContextA();
+		aa.initContextText();
+		
+	}
 
+<<<<<<< HEAD
 	// 重新整理
 	public void ContextA_Reflesh() {
 		ContextA aa = new ContextA();
@@ -86,6 +107,19 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	// 抓取所選取的資料short_desp
 	public void DataTitle_con(int pos) {
 		ArticleData = new DataBase_ArticleList(this, stylea, styleb, stylec);
+=======
+	//抓取所選取的資料short_desp
+	public void DataTitle_con(int pos) {
+		ArticleData = new DataBase_ArticleList(this,
+<<<<<<< HEAD
+				stylea, styleb, stylec);
+=======
+				SystemApplication.ArticleList_title,
+				SystemApplication.ArticleList_rkey,
+				SystemApplication.ArticleList_brief,
+				SystemApplication.ArticleList_pic, stylea, styleb, stylec);
+>>>>>>> origin/master
+>>>>>>> origin/master
 		Log.v(TAG, "joey SystemApplication.Title_id.get(pos) : "
 				+ SystemApplication.Title_id.get(pos));
 		ArticleData.execute(SystemApplication.Title_id.get(pos));
@@ -101,6 +135,14 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 				mActionBar.setDisplayShowHomeEnabled(false);
 				mActionBar.setDisplayShowTitleEnabled(false);
 				mActionBar.setDisplayShowCustomEnabled(true);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+//				mActionBar.setBackgroundDrawable(
+//						new ColorDrawable(R.color.pink));
+>>>>>>> origin/master
+>>>>>>> origin/master
 				LayoutInflater mInflater = LayoutInflater
 						.from(MainActivity.this);
 				// 客製化的View帶入
@@ -113,7 +155,15 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 							.findViewById(titleOnClick[i])) != null)
 						imageviewbtn.setOnClickListener(MainActivity.this);
 				}
+<<<<<<< HEAD
 				// 頻道切換設定
+=======
+<<<<<<< HEAD
+				// 頻道切換設定
+=======
+				// 頻道設定
+>>>>>>> origin/master
+>>>>>>> origin/master
 				Spinner mTitleTextView = (Spinner) mCustomView
 						.findViewById(R.id.title_text);
 				Log.v(TAG, "joey TitleData.activityList :"
@@ -121,7 +171,15 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 				ArrayAdapter<String> arrAdapSpnRegion2 = new ArrayAdapter<String>(
 						MainActivity.this, R.layout.spinner_item,
 						SystemApplication.TitleList);
+<<<<<<< HEAD
 				// 下拉選單設定
+=======
+<<<<<<< HEAD
+				// 下拉選單設定
+=======
+				// Title設定
+>>>>>>> origin/master
+>>>>>>> origin/master
 				arrAdapSpnRegion2
 						.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
@@ -178,10 +236,14 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 			fragment = new StyleC();
 			break;
 		}
-
+		
 		FragmentTransaction tran = getFragmentManager().beginTransaction();
 		tran.replace(R.id.home_layout, fragment).commit();
+<<<<<<< HEAD
 
+=======
+		vSlideHolder.toggleLeftDrawer();
+>>>>>>> origin/master
 	}
 
 	@Override
@@ -226,6 +288,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 
 	};
 
+<<<<<<< HEAD
 	// 關閉
 	@Override
 	protected void onDestroy() {
@@ -244,6 +307,25 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	@Override
 	protected void onRestart() {
 		Log.v(TAG, "joey onRestart()");
+=======
+	//關閉
+	@Override
+	protected void onDestroy() {
+		Log.v(TAG,"joey onDestroy()");
+		super.onDestroy();
+	}
+
+	//跳頁中
+	@Override
+	protected void onStop() {
+		Log.v(TAG,"joey onStop()");
+		super.onStop();
+	}
+	//回來
+	@Override
+	protected void onRestart() {
+		Log.v(TAG,"joey onRestart()");
+>>>>>>> origin/master
 		super.onRestart();
 	}
 }

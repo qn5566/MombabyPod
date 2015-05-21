@@ -12,7 +12,15 @@
             android:layout_centerVertical="true"
             android:spinnerMode="dialog"
            
+<<<<<<< HEAD
         	android:prompt="@string/title_bar_string" />
+=======
+<<<<<<< HEAD
+        	android:prompt="@string/title_bar_string" />
+=======
+        	android:prompt="@string/title_bar" />
+>>>>>>> origin/master
+>>>>>>> origin/master
 
         <ImageView
             android:id="@+id/style_btn"

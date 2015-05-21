@@ -21,8 +21,20 @@ public class DataBase_TitleList extends AsyncTask<String, Void, Void> {
 	String TAG = "JsonObject";
 	MainActivity context;
 
+<<<<<<< HEAD
 	public DataBase_TitleList(MainActivity ctx) {
 		context = ctx;
+=======
+<<<<<<< HEAD
+	public DataBase_TitleList(MainActivity ctx) {
+		context = ctx;
+=======
+	public DataBase_TitleList(MainActivity ctx, ArrayList<String> aList, ArrayList<String> id_aList) {
+		context = ctx;
+		SystemApplication.TitleList = aList;
+		SystemApplication.Title_id = id_aList;
+>>>>>>> origin/master
+>>>>>>> origin/master
 		
 	}
 

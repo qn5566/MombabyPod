@@ -32,13 +32,23 @@ public class SystemApplication extends Application {
 	public static ArrayList<String> ArticleList_rkey = new ArrayList<String>();
 	public static ArrayList<String> ArticleList_brief = new ArrayList<String>();
 	public static ArrayList<String> ArticleList_pic = new ArrayList<String>();
+<<<<<<< HEAD
 	public static ArrayList<String> ArticleList_short_desp = new ArrayList<String>();
+=======
+<<<<<<< HEAD
+	public static ArrayList<String> ArticleList_short_desp = new ArrayList<String>();
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
 	// ----------------第三
 	public static ArrayList<String> Context_title = new ArrayList<String>();
 	public static ArrayList<String> Context_brief = new ArrayList<String>();
 	public static ArrayList<String> Context_desp = new ArrayList<String>();
+<<<<<<< HEAD
 	//-----------------新增網頁位置
 	public static ArrayList<String> Context_Web = new ArrayList<String>();
+=======
+>>>>>>> origin/master
 	// ----------------圖片放置
 	public static ArrayList<String> IMAGE_URLS = new ArrayList<String>();
 
@@ -137,6 +147,10 @@ public class SystemApplication extends Application {
 
 		return inSampleSize;
 	}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
 
 	public static void CleanTitleList(){
 	TitleList.clear();
@@ -149,5 +163,14 @@ public class SystemApplication extends Application {
 		ArticleList_brief.clear();
 		ArticleList_pic.clear();
 		ArticleList_short_desp.clear();
+<<<<<<< HEAD
+=======
+=======
+	
+	public static class ViewHolder {
+		public ImageView imageView;
+		public ProgressBar progressBar;
+>>>>>>> origin/master
+>>>>>>> origin/master
 	}
 }

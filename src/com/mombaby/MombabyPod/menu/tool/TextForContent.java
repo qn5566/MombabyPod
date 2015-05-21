@@ -17,6 +17,13 @@ import android.widget.TextView;
 import com.mombaby.MombabyPod.R;
 
 import com.mombaby.MombabyPod.system.SystemApplication;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+import com.mombaby.MombabyPod.system.SystemApplication.ViewHolder;
+>>>>>>> origin/master
+>>>>>>> origin/master
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
@@ -31,11 +38,24 @@ public class TextForContent extends ArrayAdapter<String> {
 	ImageView HeaderImage;
 	ProgressBar Progressbar;
 	private DisplayImageOptions options;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
 	TextView Header_title_b ,Header_content_b;
 	
 
 	public TextForContent(Context ctx, int contentList,
 			ArrayList<String> acList, ImageView headerImage, ProgressBar progressbar,TextView header_title_b ,TextView header_content_b) {
+<<<<<<< HEAD
+=======
+=======
+	
+
+	public TextForContent(Context ctx, int contentList,
+			ArrayList<String> acList, ImageView headerImage, ProgressBar progressbar) {
+>>>>>>> origin/master
+>>>>>>> origin/master
 		super(ctx, contentList, acList);
 		mInflater = (LayoutInflater) ctx
 				.getSystemService(ctx.LAYOUT_INFLATER_SERVICE);
@@ -51,8 +71,17 @@ public class TextForContent extends ArrayAdapter<String> {
 				.imageScaleType(ImageScaleType.EXACTLY_STRETCHED).build();
 
 		HeaderImage = headerImage;
+<<<<<<< HEAD
 		Header_title_b = header_title_b;
 		Header_content_b = header_content_b;
+=======
+<<<<<<< HEAD
+		Header_title_b = header_title_b;
+		Header_content_b = header_content_b;
+=======
+
+>>>>>>> origin/master
+>>>>>>> origin/master
 		Progressbar = progressbar;
 	}
 
@@ -88,10 +117,20 @@ public class TextForContent extends ArrayAdapter<String> {
 		TextView tv = (TextView) convertView.findViewById(R.id.contenttext1_b);
 		tv.setText(SystemApplication.ArticleList_title.get(adjust));
 		TextView tv2 = (TextView) convertView.findViewById(R.id.contenttext2_b);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
 		tv2.setText(SystemApplication.ArticleList_short_desp.get(adjust));
 		//首圖客製
 		Header_title_b.setText(SystemApplication.ArticleList_title.get(0));
 		Header_content_b.setText(SystemApplication.ArticleList_short_desp.get(0));
+<<<<<<< HEAD
+=======
+=======
+		tv2.setText(SystemApplication.ArticleList_title.get(adjust));
+>>>>>>> origin/master
+>>>>>>> origin/master
 		ImageLoader.getInstance().displayImage(
 				SystemApplication.ArticleList_pic.get(0), HeaderImage,
 				options, new SimpleImageLoadingListener() {
